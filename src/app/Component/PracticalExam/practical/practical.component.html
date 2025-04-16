@@ -1,1 +1,42 @@
-<p>practical works!</p>
+<div class="container">
+    <h2>Practical Exam Records</h2>
+  
+    <form #examForm="ngForm" (ngSubmit)="createExam(examForm)">
+      <input type="text" placeholder="Student Name" name="studentName" [(ngModel)]="newExam.studentName" required>
+      <input type="text" placeholder="Roll Number" name="rollNumber" [(ngModel)]="newExam.rollNumber" required>
+      <input type="text" placeholder="Course Name" name="courseName" [(ngModel)]="newExam.courseName" required>
+      <input type="text" placeholder="Subject Code" name="subjectCode" [(ngModel)]="newExam.subjectCode" required>
+      <input type="date" name="examDate" [(ngModel)]="newExam.examDate" required>
+      <input type="number" placeholder="Marks Obtained" name="marksObtained" [(ngModel)]="newExam.marksObtained" required>
+      
+      <button type="submit">Add Exam</button>
+    </form>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll Number</th>
+          <th>Course Name</th>
+          <th>Subject Code</th>
+          <th>Exam Date</th>
+          <th>Marks</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of practicalExams">
+          <td>{{ exam.studentName }}</td>
+          <td>{{ exam.rollNumber }}</td>
+          <td>{{ exam.courseName }}</td>
+          <td>{{ exam.subjectCode }}</td>
+          <td>{{ exam.examDate }}</td>
+          <td>{{ exam.marksObtained }}</td>
+          <td>
+            <button (click)="deleteExam(exam.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
