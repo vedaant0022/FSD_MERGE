@@ -1,0 +1,60 @@
+:host {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    width: 100vw;
+    margin: 0;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    gap: 10px;
+  }
+  
+  .logo-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    padding: 4px;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    padding: 0.4rem 0.6rem;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 6px;
+    margin-right: 50px;
+  }
+  
+  .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav a.active {
+    background-color: #ffffff33;
+    font-weight: bold;
+  }
+  

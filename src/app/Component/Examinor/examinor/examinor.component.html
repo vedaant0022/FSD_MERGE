@@ -1,0 +1,51 @@
+<main>
+  <form #examinerForm="ngForm" (ngSubmit)="addUser(newUser, examinerForm)">
+    <h2>Add Examiner</h2>
+
+    <div class="inputbox">
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="newUser.name" name="name" required />
+    </div>
+
+    <div class="inputbox">
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="newUser.email" name="email" required />
+    </div>
+
+    <div class="inputbox">
+      <label>Department:</label>
+      <input type="text" [(ngModel)]="newUser.department" name="department" required />
+    </div>
+
+    <div class="inputbox">
+      <label>Assigned Exam:</label>
+      <input type="text" [(ngModel)]="newUser.exam" name="exam" required />
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h1>List of Examiners</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Exam</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.department }}</td>
+        <td>{{ user.assignedExams }}</td>
+        <td>
+          <button (click)="deleteUser(user.examinerID)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
