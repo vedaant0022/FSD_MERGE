@@ -49,7 +49,7 @@ export class PracticalExamComponent implements OnInit {
         this.getAllExams();
         form.resetForm();
       },
-      error: (err) => console.error('Error creating exam:', err)
+      error: (err) => console.log('Error creating exam:', err)
     });
   }
 

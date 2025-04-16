@@ -15,10 +15,13 @@ export class PracticalExamService {
     return this.http.get(`${BASE_URL}/practicalexam/all`);
   }
 
-  createExam(examData: any): Observable<any> {
-    return this.http.post(`${BASE_URL}/practicalexam/create`, examData);
-  }
+  // createExam(examData: any): Observable<any> {
+  //   return this.http.post(`${BASE_URL}/practicalexam/create`, examData);
+  // }
 
+  createExam(examData: any): Observable<any> {
+    return this.http.post(`${BASE_URL}/practicalexam/create`, examData, { responseType: 'text' });
+  }
   deleteExam(id: number): Observable<any> {
     return this.http.delete(`${BASE_URL}/practicalexam/delete/${id}`);
   }
