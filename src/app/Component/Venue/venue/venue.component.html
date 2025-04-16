@@ -1,1 +1,48 @@
-<p>venue works!</p>
+<!-- venue.component.html -->
+
+<div class="container">
+    <h2>Venue Management</h2>
+  
+    <!-- Form to add new venue -->
+    <form #venueForm="ngForm" (ngSubmit)="addVenue(venueForm)">
+      <div>
+        <label for="name">Venue Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="newVenue.name" required />
+      </div>
+      <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" [(ngModel)]="newVenue.location" required />
+      </div>
+      <div>
+        <label for="capacity">Capacity</label>
+        <input type="number" id="capacity" name="capacity" [(ngModel)]="newVenue.capacity" required />
+      </div>
+      <button type="submit">Add Venue</button>
+    </form>
+  
+    <hr />
+  
+    <!-- List of venues -->
+    <h3>All Venues</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Venue Name</th>
+          <th>Location</th>
+          <th>Capacity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let venue of venues">
+          <td>{{ venue.name }}</td>
+          <td>{{ venue.location }}</td>
+          <td>{{ venue.capacity }}</td>
+          <td>
+            <button (click)="deleteVenue(venue.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

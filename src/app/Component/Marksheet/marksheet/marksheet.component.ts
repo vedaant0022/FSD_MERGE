@@ -37,6 +37,27 @@ export class MarksheetComponent implements OnInit {
   }
 
   addMarksheet(form: NgForm) {
+    const {
+      studentId,
+      studentName,
+      examId,
+      examName,
+      examDate,
+      resultStatus,
+      academicYear
+    } = this.newMarksheet;
+    if (
+      !studentId ||
+      !studentName ||
+      !examId ||
+      !examName ||
+      !examDate ||
+      !resultStatus ||
+      !academicYear
+    ) {
+      alert('Please fill in all fields before submitting the marksheet.');
+      return;
+    }
     const payload = { ...this.newMarksheet };
     this.marksheetService.createMarksheet(payload).subscribe({
       next: () => {

@@ -54,6 +54,11 @@ export class ExaminorComponent implements OnInit {
   }
 
   addUser(user: any, form: any) {
+    if (!user.name || !user.email || !user.department || !user.exam) {
+      alert('Please fill in all fields before submitting the form.');
+      return;
+    }
+  
     const formattedUser = {
       name: user.name,
       email: user.email,
