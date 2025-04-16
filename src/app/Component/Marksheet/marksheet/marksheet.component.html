@@ -1,1 +1,72 @@
-<p>marksheet works!</p>
+<main>
+    <form #marksheetForm="ngForm" (ngSubmit)="addMarksheet(marksheetForm)">
+        <h2>Add Marksheet</h2>
+
+        <div class="inputbox">
+            <label>Student ID:</label>
+            <input type="text" name="studentId" [(ngModel)]="newMarksheet.studentId" required />
+        </div>
+
+        <div class="inputbox">
+            <label>Student Name:</label>
+            <input type="text" name="studentName" [(ngModel)]="newMarksheet.studentName" required />
+        </div>
+
+        <div class="inputbox">
+            <label>Exam ID:</label>
+            <input type="text" name="examId" [(ngModel)]="newMarksheet.examId" required />
+        </div>
+
+        <div class="inputbox">
+            <label>Exam Name:</label>
+            <input type="text" name="examName" [(ngModel)]="newMarksheet.examName" required />
+        </div>
+
+        <div class="inputbox">
+            <label>Exam Date:</label>
+            <input type="date" name="examDate" [(ngModel)]="newMarksheet.examDate" required />
+        </div>
+
+        <div class="inputbox">
+            <label>Result Status:</label>
+            <input type="text" name="resultStatus" [(ngModel)]="newMarksheet.resultStatus" required />
+        </div>
+
+        <div class="inputbox">
+            <label>Academic Year:</label>
+            <input type="text" name="academicYear" [(ngModel)]="newMarksheet.academicYear" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <h2>List of Marksheets</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Exam ID</th>
+                <th>Exam Name</th>
+                <th>Exam Date</th>
+                <th>Result</th>
+                <th>Academic Year</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of marksheets">
+                <td>{{ m.studentId }}</td>
+                <td>{{ m.studentName }}</td>
+                <td>{{ m.examId }}</td>
+                <td>{{ m.examName }}</td>
+                <td>{{ m.examDate }}</td>
+                <td>{{ m.resultStatus }}</td>
+                <td>{{ m.academicYear }}</td>
+                <td>
+                    <button (click)="deleteMarksheet(m.marksheetID)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>

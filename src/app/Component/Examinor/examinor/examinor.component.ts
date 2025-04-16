@@ -53,25 +53,6 @@ export class ExaminorComponent implements OnInit {
     });
   }
 
-  // addUser(user: any) {
-  //   const formattedUser = {
-  //     name: user.name,
-  //     email: user.email,
-  //     department: user.department,
-  //     assignedExams: user.exam,
-  //   };
-
-  //   this.examinorService.SaveData(formattedUser).subscribe(
-  //     (response: any) => {
-  //       this.fetchUsers();
-  //       console.log('Response:', response);
-  //     },
-  //     (error) => {
-  //       console.error('Error:', error);
-  //     }
-  //   );
-  // }
-
   addUser(user: any, form: any) {
     const formattedUser = {
       name: user.name,
