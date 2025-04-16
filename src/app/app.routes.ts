@@ -12,5 +12,6 @@ export const routes: Routes = [
     {path:'venue', component:VenueComponent},
     {path:'practicalexam', component:PracticalExamComponent},
     {path:'marksheet', component:MarksheetComponent},
-    {path:'', component:AppComponent},
+    // {path:'', component:AppComponent},
+    { path: '', redirectTo: 'examinor', pathMatch: 'full' },
 ];
